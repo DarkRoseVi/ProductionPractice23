@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminTeaShopWpf.Pages"
         mc:Ignorable="d"
-        Title="ResipteWindow" Height="400" Width="600"
+        Title="Рецепт" Height="400" Width="600"
         ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>

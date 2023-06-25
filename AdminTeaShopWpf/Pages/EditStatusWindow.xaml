@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminTeaShopWpf.Pages"
         mc:Ignorable="d"
-        Title="EditStatusWindow" Height="300" Width="300"
+        Title="Редактирование статуса" Height="300" Width="300"
         ResizeMode="NoResize">
     <Grid>
         <StackPanel VerticalAlignment="Center"

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientTeaShopWpf.Pages"
         mc:Ignorable="d"
-        Title="ChekWindow" Height="300" Width="300"
+        Title="Добавление (Редактирование) счета" Height="300" Width="300"
         ResizeMode="NoResize">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center"

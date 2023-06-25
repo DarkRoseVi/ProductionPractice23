@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WaiterWPF.Pages"
         mc:Ignorable="d"
-        Title="GivOrderWindow" Height="400" Width="400"
+        Title="Выдача товара" Height="400" Width="400"
         ResizeMode="NoResize">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">

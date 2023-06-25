@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WaiterWPF.Pages"
         mc:Ignorable="d"
-        Title="ReturnWindow" Height="400" Width="300"
+        Title="Возврат товара" Height="400" Width="300"
         ResizeMode="NoResize">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">

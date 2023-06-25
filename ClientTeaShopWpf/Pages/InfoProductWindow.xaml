@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientTeaShopWpf.Pages"
         mc:Ignorable="d"
-        Title="InfoProductWindow" Height="550" Width="550"
+        Title="Информация о продукте" Height="550" Width="550"
         ResizeMode="NoResize">
     <Grid>
         <DockPanel>

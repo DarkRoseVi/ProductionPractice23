@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientTeaShopWpf.Pages"
         mc:Ignorable="d"
-        Title="UnfoOrderWindow" Height="600" Width="400">
+        Title="Получение заказа" Height="600" Width="400">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">

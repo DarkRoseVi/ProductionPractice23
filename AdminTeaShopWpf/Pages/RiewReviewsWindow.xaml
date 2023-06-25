@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminTeaShopWpf.Pages"
         mc:Ignorable="d"
-        Title="RiewReviewsWindow" Height="500" Width="740"
+        Title="Отзывы" Height="500" Width="740"
         ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
