@@ -1,0 +1,43 @@
+﻿<Page x:Class="ClientTeaShopWpf.Pages.AutoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClientTeaShopWpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="850"
+      Title="AutoPage">
+
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Right"
+                        Orientation="Vertical"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="0 0 80 0">
+                <TextBlock Text="Логин"/>
+                <TextBox x:Name="LoginBtn"  
+                         Margin="5"
+                         Style="{StaticResource MyTextBox}"/>
+                <TextBlock Text="Пароль" Margin="5"/>
+                <TextBox x:Name="PasswordTb" 
+                         Margin="5"
+                         Style="{StaticResource MyTextBox}" />
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Вход" x:Name="VxodBtn"
+                            Click="VxodBtn_Click"
+                            Width="100"/>
+
+                    <Button Content="Регистрация"
+                        Name="RegBtn" Click="RegBtn_Click"
+                            Width="100"/>
+
+                </StackPanel>
+
+            </StackPanel>
+            <Image Source="/ClientTeaShopWpf;component/Resoures/авторизация.jpg" 
+                   DockPanel.Dock="Left" HorizontalAlignment="Left"/>
+        </DockPanel>
+    </Grid>
+</Page>

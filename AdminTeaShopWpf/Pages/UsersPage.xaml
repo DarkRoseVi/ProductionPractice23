@@ -1,0 +1,86 @@
+﻿<Page x:Class="AdminTeaShopWpf.Pages.UsersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdminTeaShopWpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="UsersPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="395*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Все"
+                    x:Name="AllBtn"
+                    Click="AllBtn_Click"/>
+
+            <Button Content="Администратор"
+                    x:Name="AdminBtn"
+                    Click="AdminBtn_Click"/>
+
+            <Button Content="Официант"
+                    x:Name="OfBtn"
+                    Click="OfBtn_Click"/>
+
+            <Button Content="Курьер"
+                    x:Name="CourerBtn"
+                    Click="CourerBtn_Click"/>
+            
+            <Button Content="Клиент"
+                    x:Name="ClientBtn"
+                    Click="ClientBtn_Click"/>
+
+            <TextBlock Text="Поиск" VerticalAlignment="Center"
+                       Margin="50 0 0 0"/>
+            <TextBox Name="PoiskTb"
+                     Margin="5"
+                     Width="200"/>
+
+            <Button Content="Добавить пользователя"
+              Margin="5"
+                     Name="AddBtn"
+                    Click="AddBtn_Click"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="UsersDg"
+                  AutoGenerateColumns="False"
+                  ColumnWidth ="*"
+                  IsReadOnly="True">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Фамилия"
+                                    Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Имя"
+                                    Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Отчество"
+                                     Binding="{Binding SurName}"/>
+                <DataGridTextColumn Header="Роль"
+                                     Binding="{Binding Login}"/>
+                <DataGridTextColumn Header="Пароль"
+                                     Binding="{Binding Password}"/>
+                <DataGridTextColumn Header="Логин"
+                                     Binding="{Binding Role.Title}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button Content="Редактировать"
+                                        x:Name="EditBtn"
+                                        Click="EditBtn_Click"
+                                        Width="60"/>
+                                <Button Content="Удалить"
+                                        x:Name="DeletBtn"
+                                        Click="DeletBtn_Click"
+                                        Width="60"/>
+                            </StackPanel>
+                            
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

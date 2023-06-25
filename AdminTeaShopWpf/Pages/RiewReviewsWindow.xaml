@@ -1,0 +1,64 @@
+﻿<Window x:Class="AdminTeaShopWpf.Pages.RiewReviewsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdminTeaShopWpf.Pages"
+        mc:Ignorable="d"
+        Title="RiewReviewsWindow" Height="500" Width="740"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="201*"/>
+            <RowDefinition Height="16*"/>
+        </Grid.RowDefinitions>
+        <ListView
+                 x:Name="ReviewLw">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource BorderMe}">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock  Text="Users" Margin="5"/>
+                                <TextBlock Text="{Binding User.FullName }"
+                                     
+                                           Width="145" Height="35"
+                                          TextWrapping="Wrap"
+                                           Margin="5"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock  Text="Product" Margin="5"/>
+                                <TextBlock Text="{Binding Product.Title}"
+                                  Margin="5"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock   Text="Content" Margin="5"/>
+                                <TextBlock Text="{Binding Context}" Margin="10"
+                                  
+                                           Height="40"
+                                           TextWrapping="Wrap" Width="150" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="3" Margin="5">
+                      
+                                <Button Content="Удалить" Margin="5"  Width="70"
+                                    x:Name="DeletBtn" Click="DeletBtn_Click"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="1" Width="100" HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Content="Выход"
+                x:Name="ExitBtn"
+                Click="ExitBtn_Click"/>
+    </Grid>
+</Window>

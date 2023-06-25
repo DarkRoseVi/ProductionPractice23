@@ -1,0 +1,44 @@
+﻿<Window x:Class="ProviderWpf.Pages.AddIngredientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProviderWpf.Pages"
+        mc:Ignorable="d"
+        Title="AddIngredientWindow" 
+        Height="650" Width="300"
+        ResizeMode="NoResize">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+                   >
+            <TextBlock Text="Название"
+                   />
+            <TextBox Text="{Binding Title}"
+                    Style="{StaticResource MyTextBox}"
+                     x:Name="TitleTb" PreviewTextInput="TitleTb_PreviewTextInput"/>
+            <TextBlock Text="Стоимость в руб."/>
+            <TextBox   x:Name="CostTb"
+                Text="{Binding Cost}"
+               Style="{StaticResource MyTextBox}" PreviewTextInput="CostTb_PreviewTextInput"/>
+            <TextBlock Text="Изображение"/>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Image Source="{Binding Photo}"
+                   Height="150" Width="150"
+                   Margin="5"/>
+                <Button Content="Добавить"
+                        Name="AddImageBtn" Width="100"
+                        Click="AddImageBtn_Click"/>
+            </StackPanel>
+            <TextBlock Text="Информация"/>
+            <TextBox  Text="{Binding Description}" Width="200"
+                      Height="80" TextWrapping="Wrap"
+                      Margin="5"/>
+            <Button Content="Сохранить"
+                    x:Name="SavrBtn"
+                    Click="SavrBtn_Click"/>
+            <Button Content="Выход"
+                    x:Name="ExitBtn"
+                    Click="ExitBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

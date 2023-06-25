@@ -1,0 +1,35 @@
+﻿<Window x:Class="ClientTeaShopWpf.Pages.InfoIngredientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientTeaShopWpf.Pages"
+        mc:Ignorable="d"
+        Title="InfoIngredientWindow" Height="auto" Width="550"
+        ResizeMode="NoResize">
+    <Grid>
+        <DockPanel >
+            
+        <StackPanel DockPanel.Dock="Left" Margin="20">
+                <TextBlock Text="Название"/>
+                <TextBlock Text="{Binding Ingredient.Title}"
+                           Width="150" Height="50"
+                           TextWrapping="Wrap"/>
+                <TextBlock Text="Описание"/>
+                <TextBlock Text="{Binding Ingredient.Description}"
+                           Width="150" Height="auto"
+                          
+                           TextWrapping="Wrap"/>
+                <Button x:Name="ExutBtn"
+                        Click="ExutBtn_Click"
+                        Content="Выход"
+                        Width="80"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" Margin="20">
+                <TextBlock Text="Изобрадение"/>
+                <Image Source="{Binding Ingredient.Photo}"
+                       Height="150" Width="150"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

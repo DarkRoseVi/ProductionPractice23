@@ -1,0 +1,75 @@
+﻿<Window x:Class="ClientTeaShopWpf.Pages.ResipeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientTeaShopWpf.Pages"
+        mc:Ignorable="d"
+        Title="ResipeWindow" Height="400" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="166*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <ListView Margin="5"
+                 x:Name="ResheptLw">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource BorderMe}">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                                <TextBlock  Text="Ингредиент" />
+                                <TextBlock Text="{Binding Ingredient.Title }"
+                                           Width="145" Height="35"
+                                          TextWrapping="Wrap"
+                                           Margin="10"
+                                        />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock  Text="Чай" Margin="5"/>
+                                <TextBlock Text="{Binding Tea.Title}"
+                                 Width="150"  />
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock   Text="Изображение ингредиента"
+                                             TextWrapping="Wrap" Width="100"
+                                             />
+                                <Image Source="{Binding Ingredient.Photo}" Height="100" Width="100"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Grid.Column="3">
+                                <TextBlock Text="Количество" />
+                                <TextBlock Text="{Binding Count}"  Width="60"/>
+
+                            </StackPanel>
+                            <StackPanel Grid.Column="4">
+                                <Button Content="Подробнее об ингредиенте"
+                                        x:Name="InfoBtn"
+                                        Click="InfoBtn_Click"
+                                        Width="200"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" 
+                    Orientation="Horizontal">
+
+            <Button  Width="100"  
+                Content="Выход"
+                x:Name="ExitBtn"
+                Click="ExitBtn_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
+

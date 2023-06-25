@@ -1,0 +1,34 @@
+﻿<Window x:Class="ClientTeaShopWpf.Pages.InfoProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientTeaShopWpf.Pages"
+        mc:Ignorable="d"
+        Title="InfoProductWindow" Height="550" Width="550"
+        ResizeMode="NoResize">
+    <Grid>
+        <DockPanel>
+            
+        <StackPanel HorizontalAlignment="Center" Margin="15"
+                    VerticalAlignment="Center" DockPanel.Dock="Left">
+            <TextBlock Text="Название"/>
+            <TextBlock Text="{Binding Title}"/>
+            <TextBlock Text="Стоимость"/>
+            <TextBlock Text="{Binding Cost}"/>
+            <TextBlock Text="Описание"/>
+            <TextBlock Text="{Binding Description}" Height="80"
+                       Width="150" TextWrapping="Wrap"/>
+                <Button x:Name="ExitBtn"
+                         Click="ExitBtn_Click"
+                         Content="Выход" Width="80"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Изображение"/>
+            <Image Source="{Binding Photo}" Width="150"
+                   Height="150" />
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

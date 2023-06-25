@@ -1,0 +1,151 @@
+﻿<Page x:Class="ClientTeaShopWpf.Pages.AkkPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClientTeaShopWpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AkkPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Фото пользователя"  Margin="5"/>
+                <Image x:Name="ImageHome" Margin="5"
+                       Source="{Binding Photo}"
+                       Width="150" Height="150"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Text="Фамилия" Margin="5"/>
+                <TextBlock Text="{Binding LastName}"
+                           Name="LastNameTb" Margin="5"/>
+                <!--<TextBlock Text="{Binding Id}" Margin="5"/>-->
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Имя"  Margin="5"/>
+                <TextBlock Text="{Binding Name}"
+                      Name ="NameTb"  Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Text="Отчество" Margin="5"/>
+                <TextBlock Text="{Binding SurName}"  
+                           Name="SurNameTb" Margin="5"/>
+            </StackPanel>
+
+            <Button Content="Редактировать основную ифномацию" Name="EditInfoBtn"
+                    Click="EditInfoBtn_Click"/>
+
+        </StackPanel>
+
+        <DockPanel Grid.Column="1">
+            <Button DockPanel.Dock="Top" Content="Добавить счет"
+                    x:Name="AddBtn"
+                    Click="AddBtn_Click"/>
+            <ListView DockPanel.Dock="Top" Width="auto" Height="160" 
+                      x:Name="ChekLw" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource BorderMe}" >
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height ="60"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="350"/>
+                                    <ColumnDefinition Width="150"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Row="0" Grid.Column="0"
+                                        Orientation="Horizontal">
+                                    <TextBlock Text="Счет" 
+                                           
+                                               />
+                                    <TextBlock Text="{Binding Number}" 
+                                           />
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Grid.Row="0">
+                                    <Button  
+                                      
+                                    Content="Редактировать"
+                                     x:Name="EditBtn"
+                                     Click="EditBtn_Click"/>
+
+                                </StackPanel>
+
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ListView  DockPanel.Dock="Bottom" Width="auto"
+                       x:Name="OrderLw"
+                         >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource BorderMe}">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="160"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Row="0" Grid.Column="0"
+                                            HorizontalAlignment="Center">
+                                    <TextBlock Text="Номер" TextWrapping="Wrap" 
+                                               Width="35"/>
+                                    <TextBlock 
+                                    Text="{Binding Order.Id }"
+                                             TextWrapping="Wrap"
+                                               Width="35"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="0" Grid.Column="1" 
+                                         HorizontalAlignment="Center" >
+                                    <TextBlock Text="Пользователь" TextWrapping="Wrap"
+                                               Width="135"/>
+                                    <TextBlock Text="{Binding Order.User.Name}"
+                                                TextWrapping="Wrap"
+                                               Width="135"
+                                           />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                                    <TextBlock Text="Продукт"      TextWrapping="Wrap"
+                                               Width="135"/>
+                                    <TextBlock Text ="{Binding Product.Title}"
+                                              TextWrapping="Wrap"
+                                               Width="135" />
+
+                                </StackPanel>
+                                <StackPanel Grid.Column="3"  Margin="5">
+                                    <Button Content="Информация"  x:Name="InfoOrrderBtn"
+                                        Click="InfoOrrderBtn_Click"
+                                            Height="30" Width="160"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </DockPanel>
+    </Grid>
+</Page>

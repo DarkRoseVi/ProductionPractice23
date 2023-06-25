@@ -1,0 +1,72 @@
+﻿<Page x:Class="WaiterWPF.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WaiterWPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HomePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="349*"/>
+            <RowDefinition Height="35*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FF0F2121" Grid.Row="0"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+
+            <Image Source="/WaiterWPF;component/Resousrs/логотип.jpg"
+                  Height="150" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Button Content="Заказы"
+                            x:Name="OrderBtn"
+                            Click="OrderBtn_Click"
+                              Width="120"/>
+
+                    <Button Content="Аккаунт"
+                            x:Name="AkkBtn"
+                            Click="AkkBtn_Click"
+                            Width="120" />
+
+
+
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+
+                    <Button Content="Возврат" Name="RefundBtn"
+                            Click="RefundBtn_Click"
+                              Width="120"/>
+
+                    <Button Content="Выдача"
+                            x:Name="ExtraditionBtn"
+                            Click="ExtraditionBtn_Click"
+                            Width="120" />
+
+                </StackPanel>
+
+
+            </StackPanel>
+        </StackPanel>
+
+        <Frame x:Name="Myframe"
+               Grid.Row="1"
+               NavigationUIVisibility="Hidden"/>
+        <Rectangle Fill="#FF0F2121" Grid.Row="2"/>
+        <Button Content="Выход" Margin="10" 
+                            Name="ExitBtn"
+                            Click="ExitBtn_Click"
+                          Grid.Row="2" HorizontalAlignment="Right"
+                            Width="100"/>
+    </Grid>
+</Page>

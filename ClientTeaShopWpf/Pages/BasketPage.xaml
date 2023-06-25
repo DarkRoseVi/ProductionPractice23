@@ -1,0 +1,124 @@
+﻿<Page x:Class="ClientTeaShopWpf.Pages.BasketPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClientTeaShopWpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="340" d:DesignWidth="850"
+      Title="BasketPage">
+
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center"  HorizontalAlignment="Center" 
+                        Margin="15 0 20 0">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Пользователь"/>
+                <TextBlock x:Name="UserTb" Width="150"
+                           TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    
+                <TextBlock Text="Дата"/>
+                <DatePicker x:Name="DatePc" Margin="5"
+                            Width="100"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                    <TextBlock Text="Тип заказа"/>
+                <ComboBox x:Name="TypeOrderCb"
+                          DisplayMemberPath="Titke" SelectionChanged="TypeOrderCb_SelectionChanged"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    
+                <TextBlock Text="Тип оплаты"/>
+                <ComboBox x:Name="TypePaumentCb" 
+                          DisplayMemberPath="Title" SelectionChanged="TypePaumentCb_SelectionChanged"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"  x:Name="ChetSt" >
+
+                    <StackPanel  Orientation="Horizontal"  HorizontalAlignment="Right">
+                    <TextBlock Text="Номер карты"/>
+                <ComboBox x:Name="ChekCb" 
+                          DisplayMemberPath="Number"/>
+                        <TextBlock x:Name="NumberTb"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock Text="CVV"/>
+                        <TextBox x:Name="CVVTb" Margin="5"
+                                 MaxLength="3" PreviewTextInput="CVVTb_PreviewTextInput" 
+                                />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel x:Name="NumberSt"  HorizontalAlignment="Right" Orientation="Horizontal">
+
+
+
+                    <TextBlock Text="Номер стола"/>
+                    <ComboBox x:Name="TeableCb"
+                          DisplayMemberPath="Number"/>
+             
+            </StackPanel>
+                <StackPanel x:Name="AdrresSt" Orientation="Horizontal" HorizontalAlignment="Right">
+                    
+                <TextBlock Text="Адрес"/>
+                <TextBox x:Name="AdressTb" Style="{StaticResource MyTextBox}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Сумма"/>
+                <TextBlock x:Name="SumTb" Width="150"/>
+                    
+                </StackPanel>
+                <Button Content="Создать" x:Name="SaveBtn"
+                        Click="SaveBtn_Click"
+                        Width="100"/>
+            </StackPanel>
+
+            <ListView Width="500" HorizontalAlignment="Left" x:Name="ProductLw">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource BorderMe}">
+                            
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="55"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <StackPanel Margin="5" Orientation="Horizontal" Grid.Column="0">
+                                <TextBlock Text="Name" Margin="5" />
+                                <TextBlock x:Name="TitleTb" Margin="5"
+                                       Text="{Binding Title}"  
+                                           Width="90"
+                                           TextWrapping="Wrap" Height="auto"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                <TextBlock Text="Cost" Margin="10" />
+                                <TextBlock  Margin="10" 
+                                        Text="{Binding Cost}"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="5" Grid.Column="2">
+                                <TextBlock Text="Count" Margin="5"/>
+                                <TextBox Width="50" x:Name="CountTb" 
+                                         Text="{Binding Counts}" BorderThickness="1.5"
+                                         PreviewTextInput="CountTb_PreviewTextInput"
+                                         />
+                            </StackPanel>
+                            <Button Grid.Column="4" Content="Delete" x:Name="DeleBtn"
+                                Click="DeleBtn_Click"/>
+                        </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </DockPanel>    
+    </Grid>
+</Page>

@@ -1,0 +1,64 @@
+﻿<Page x:Class="ProviderWpf.Pages.LaidingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProviderWpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LaidingPage"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <ListView x:Name="LandinbgLw">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource BorderMe}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Поставщик"/>
+                                <TextBlock Text="{Binding Manufacturer.Title}"
+                                           Width="180" Height="40" Margin="10"
+                                           HorizontalAlignment="Center"
+                                           TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1"   Visibility="{Binding VisiblIng}">
+                                <TextBlock Text="Ингредиент"/>
+                                <TextBlock Text="{Binding Ingredient.Title}"
+                                           TextWrapping="Wrap" Width="220"
+                                           Margin="10"
+                                           HorizontalAlignment="Center"
+                                           Height="40"/>
+                            </StackPanel>
+
+
+
+                            <StackPanel Grid.Column="1" 
+                                    Visibility="{Binding VisiblTea}">
+                                <TextBlock Text="Чай"
+                                       Margin="2" />
+                                <TextBlock Text="{Binding Tea.Title}"
+                                      TextWrapping="Wrap" Width="220"
+                                           Margin="10"
+                                           HorizontalAlignment="Center"
+                                           Height="40"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <Button x:Name="DeleBtn"
+                                        Click="DeleBtn_Click"
+                                         Content="Удалить"
+                                        Width="80"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
